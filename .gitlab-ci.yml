@@ -3,8 +3,7 @@ default:
 build-job:
     stage: build
     script:
-        - yarn
-        - yarn build
+        - ./gradlew assemble
     artifacts:
         when: always
         paths:
