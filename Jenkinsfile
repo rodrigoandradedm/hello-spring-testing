@@ -8,10 +8,20 @@ pipeline {
                 sh "./gradlew Test"
                 sh "./gradlew assemble"
             }
+            post {
+                always {
+                    junit 'build/test-result/test/TEST-*.xml'
+                }
+            }
         }
         stage('Build') {
             steps {
                 sh "./gradlew assemble"
+            }
+        }
+        post {
+            sucess{
+                archiveArtifacts 'build/libs/*.jar'
             }
         }
 
