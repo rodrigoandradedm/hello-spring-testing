@@ -11,8 +11,8 @@ pipeline {
         post {
             always {
                 junit 'build/test-results/test/TEST-*.xml'
-                }
             }
+        }
         stage('Build') {
             steps {
                 sh "./gradlew assemble"
