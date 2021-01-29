@@ -1,5 +1,8 @@
 default:
     image: openjdk:11-jdk
+stages:
+    - test-stage
+    - build-tage
 test-stage:
     stage: test
     script: 
@@ -20,4 +23,4 @@ build-job:
 prueba-job:
     stage: build
     script:
-        - tree
+        - ls build
