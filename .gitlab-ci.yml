@@ -17,3 +17,7 @@ build-job:
         when: always
         paths:
             - build/libs/*.jar
+prueba-job:
+    stage: build
+    script:
+        - tree
