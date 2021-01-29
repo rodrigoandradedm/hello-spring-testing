@@ -9,7 +9,7 @@ pipeline {
                 sh "./gradlew assemble"
             }
             post {
-                always {
+                always{
                     junit 'build/test-result/test/TEST-*.xml'
                 }
             }
