@@ -5,7 +5,7 @@ pipeline {
         stage('Test') {
             steps {
                 git branch: 'pitest', url: 'http://10.250.14.1:8929/root/spring-grade-test'
-                sh './gradlew clean pitest'    
+                sh './gradlew pitest'    
             }
             
         }
