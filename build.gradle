@@ -2,15 +2,17 @@ plugins {
 	id 'org.springframework.boot' version '2.3.2.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
-	id 'jacoco'
+	id 'info.solidsoft.pitest' version '1.5.1'
 }
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+
 repositories {
 	mavenCentral()
+
 }
 
 dependencies {
@@ -19,21 +21,17 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 }
+pitest {
+    pitestVersion = '1.5.1' //not needed when a default PIT version should be used
+    threads = 4
+    outputFormats = ['XML', 'HTML']
+    timestampedReports = false
+}
 
 test {
 	useJUnitPlatform()
 }
 
-test {
-    finalizedBy jacocoTestReport // report is always generated after tests run
+pitest {
+    junit5PluginVersion = '0.12'
 }
-
-jacocoTestReport {
-    dependsOn test // tests are required to run before generating the report
-}
-
-jacoco {
-    toolVersion = "0.8.6"
-    reportsDir = file("$buildDir/customJacocoReportDir")
-}
-
