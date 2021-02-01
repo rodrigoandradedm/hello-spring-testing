@@ -5,13 +5,8 @@ pipeline {
         stage('Test') {
             steps {
                 git branch: 'master', url: 'http://10.250.14.1:8929/root/spring-grade-test'
-                sh "./gradlew clean test"
-                jacoco(
-                        execPattern: 'build/jacoco/*.exec',
-                        classPattern: 'build/classes',
-                        sourcePattern: 'src/main/java',
-                        exclusionPattern: 'src/test*'
-                )
+                sh "./gradlew clean pitest"
+                
             }
             post {
                 always {
