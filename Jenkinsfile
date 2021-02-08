@@ -11,6 +11,10 @@ pipeline {
             post {
                 always {
                     junit 'build/test-results/test/TEST-*.xml'
+                    recordIssues (
+                        enabledForFailure: true,
+                        tools: checkStyle(pattern: 'build/reports/checkstyle/*.xml')
+                    )
                     recordIssues enabledForFailure: true, tool: pmdParser(pattern: 'build/reports/pmd/*.xml')
                 }
             }
