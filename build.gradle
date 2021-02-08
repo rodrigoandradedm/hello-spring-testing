@@ -3,6 +3,8 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
 	id 'checkstyle'
+	id 'pmd'
+	id 'com.github.spotbugs' version '4.6.0'
 }
 
 group = 'com.example'
@@ -44,4 +46,14 @@ checkstyle {
 
 checkstyleTest {
 	configFile file("${project.rootDir}/config/checkstyle/checkstyle.xml")
+}
+pmd {
+    ignoreFailures = true
+}
+dependencies {
+    spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.10.1'
+}
+
+spotbugs {
+    ignoreFailures = true
 }
