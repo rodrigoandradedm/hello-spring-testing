@@ -2,7 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.3.2.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
-	id 'jacoco'
+	id 'checkstyle'
 }
 
 group = 'com.example'
@@ -24,6 +24,7 @@ test {
 	useJUnitPlatform()
 }
 
+/*
 test {
     finalizedBy jacocoTestReport // report is always generated after tests run
 }
@@ -36,4 +37,11 @@ jacoco {
     toolVersion = "0.8.6"
     reportsDir = file("$buildDir/customJacocoReportDir")
 }
+*/
+checkstyle {
+    ignoreFailures = true
+}
 
+checkstyleTest {
+	configFile file("${project.rootDir}/config/checkstyle/checkstyle.xml")
+}
