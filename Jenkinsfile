@@ -13,7 +13,7 @@ pipeline {
                     junit 'build/test-results/test/TEST-*.xml'
                     recordIssues(
                         enabledForFailure: true,
-                        tools: checkStyle(pattern: 'build/reports/checkstyle/*.xml')
+                        tools: checkStyle(pattern: 'build/reports/pmd/*.xml')
                     )
                 }
             }
