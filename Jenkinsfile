@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                git branch: 'master', url: 'http://10.250.14.1:8929/root/spring-grade-test'
+                git branch: 'checkstyle', url: 'http://10.250.14.1:8929/root/spring-grade-test'
                 sh "./gradlew clean test"
                 sh "./gradlew check"
             }
