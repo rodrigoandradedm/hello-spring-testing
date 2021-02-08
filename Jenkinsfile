@@ -8,7 +8,7 @@ pipeline {
                 sh "./gradlew clean test"
                 sh "./gradlew check"
 		configFileProvider(
-			[configFile(fileId: 'gradle.properties-sonarqube')]) {
+			[configFile(fileId: 'gradle.properties-sonarqube', targetLocation: 'gradle.properties')]) {
 			sh './gradlew sonarqube'
     		}
             }
