@@ -11,10 +11,6 @@ pipeline {
     			sh './gradlew sonarqube'
 		}
 		sh './gradlew dependencyCheckAnalyze'
-		//configFileProvider(
-		//	[configFile(fileId: 'gradle.properties-sonarqube', targetLocation: 'gradle.properties')]) {
-		//	sh './gradlew sonarqube'
-    		//}
             }
             post {
                 always {

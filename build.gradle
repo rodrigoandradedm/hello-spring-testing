@@ -63,5 +63,5 @@ spotbugs {
 dependencyCheck {
     autoUpdate=false
     cveValidForHours=2
-    format='XML'
+    format='ALL'
 }
