@@ -60,9 +60,8 @@ spotbugs {
     ignoreFailures = true
 }
 
-
 dependencyCheck {
     autoUpdate=false
-    cveValidForHours=1
-    format='JSON'
+    cveValidForHours=2
+    format='XML'
 }

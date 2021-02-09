@@ -23,7 +23,7 @@ pipeline {
                       //  enabledForFailure: true,
                         //tool: checkStyle(pattern: 'build/reports/checkstyle/*.xml')
                     //)
-		    dependencyCheckPublisher pattern: 'build/reports/dependency-check-report.json'
+		    dependencyCheckPublisher pattern: 'build/reports/dependency-check-report.xml'
                     recordIssues enabledForFailure: true, tool: pmdParser(pattern: 'build/reports/pmd/*.xml')
                     recordIssues enabledForFailure: true, tool: spotBugs(pattern: 'build/reports/spotbugs/*.xml')
                 }
