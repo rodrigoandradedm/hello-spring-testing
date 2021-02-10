@@ -35,5 +35,12 @@ pipeline {
                 }
             }
         }
+	stage('publish') {
+	    steps {
+		withCredentials([string(credentialsId: 'gitLabPrivateToken', variable: 'TOKEN')]) {
+		    sh './gradlew publish'
+  		}
+	    }
+	}
     }
 }
