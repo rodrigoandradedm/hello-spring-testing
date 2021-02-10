@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                git branch: 'publish', url: 'http://10.250.14.1:8929/root/spring-grade-test'
+                git branch: 'archiva', url: 'http://10.250.14.1:8929/root/spring-grade-test'
                 sh "./gradlew clean test"
                 //sh "./gradlew check"
 		//withSonarQubeEnv(credentialsId: '47355589-96b7-4a4d-a3e1-97f149f76f8e', installationName: 'local') {
