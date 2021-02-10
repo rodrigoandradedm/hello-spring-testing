@@ -81,7 +81,7 @@ publishing {
                 name "GitLab"
                 credentials(HttpHeaderCredentials) {
                     name = 'Private-Token'
-                    value = System.getEnv('TOKEN')
+                    value = System.getenv('TOKEN')
                 }
                 authentication {
                     header(HttpHeaderAuthentication)
