@@ -70,7 +70,7 @@ publishing {
         publications {
                 bootJava(MavenPublication) {
                         artifact bootJar
-			//version = '0.0.1-RELEASE'
+			version = '0.0.2-RELEASE'
 			//groupId = 'com.sinensia'
 			//artifactId = 'HelloSpringTesting'
                 }
