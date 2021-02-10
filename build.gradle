@@ -78,9 +78,10 @@ publishing {
         repositories {
             maven {
                 url "http://10.250.14.1:9082/repository/snapshots/"
+		name "archiva"
                 credentials {
-                    username = System.getenv('$USERNAME')
-                    password = System.getenv('$PASSWORD')
+                    username = System.getenv('USERNAME')
+                    password = System.getenv('PASSWORD')
                 }
             }
         }
